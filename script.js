@@ -1,6 +1,25 @@
 let currentQuote = {};
 let quotes;
 
+const COLORS = [
+  "rgb(255, 51, 0)",
+  "rgb(255, 153, 0)",
+  "rgb(153, 102, 51)",
+  "rgb(179, 0, 89)",
+  "rgb(230, 184, 0)",
+  "rgb(204, 204, 0)",
+  "rgb(153, 204, 0)",
+  "rgb(255, 102, 102)",
+  "rgb(0, 51, 102)",
+  "rgb(51, 51, 255)",
+  "rgb(102, 153, 153)",
+  "rgb(51, 153, 102)",
+  "rgb(153, 153, 255)",
+  "rgb(153, 0, 204)",
+  "rgb(0, 51, 0)"
+];
+const newColor = () => COLORS[Math.floor(Math.random() * COLORS.length)];
+
 const updateUI = ({ quote, author }) => {
   const newHTML = `
     <p id="text">${quote}</p>
@@ -12,6 +31,11 @@ const updateUI = ({ quote, author }) => {
   `;
   $("#quote-box").html(newHTML);
 
+  // Change the colors
+  const color = newColor();
+  $("body, #new-quote").css("background-color", color);
+  $("#quote-box, #tweet-quote i").css("color", color);
+
   // Add event listeners
   newQuote();
   tweetQuote();
@@ -20,7 +44,7 @@ const updateUI = ({ quote, author }) => {
 // Event Listeners
 const newQuote = () =>
   $("#new-quote").on("click", () => {
-    currentQuote = quotes[Math.floor(Math.random() * 102)];
+    currentQuote = quotes[Math.floor(Math.random() * quotes.length)];
     updateUI(currentQuote);
   });
 
@@ -47,6 +71,6 @@ const tweetQuote = () =>
     })
   ).quotes;
 
-  currentQuote = quotes[Math.floor(Math.random() * 102)];
+  currentQuote = quotes[Math.floor(Math.random() * quotes.length)];
   updateUI(currentQuote);
 })();

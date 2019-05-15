@@ -1,6 +1,6 @@
 body {
-  background-color: #06cbfc !important;
   font-size: 1.5em !important;
+  transition: background-color 1s;
 }
 #quote-box {
   position: fixed;
@@ -12,7 +12,7 @@ body {
   box-shadow: 5px 5px 10px 0px #222;
   padding: 20px;
   border-radius: 20px;
-  color: #02657e;
+  transition: color 1s;
 }
 #quote-box h1 {
   text-align: center;
@@ -29,18 +29,18 @@ body {
 }
 #new-quote {
   float: right;
-  background-color: #06cbfc;
   color: #f7f7f7f7;
   font-weight: bold;
+  transition: background-color 1s;
 }
 
 #tweet-quote {
-  color: #06cbfc;
   float: left;
 }
 
 #tweet-quote i {
   font-size: 2em;
+  transition: color 1s;
 }
 
 @media (max-width: 520px) {
