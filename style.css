@@ -1,0 +1,64 @@
+body {
+  background-color: #06cbfc !important;
+  font-size: 1.5em !important;
+}
+#quote-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 500px;
+  background-color: #f7f7f7f7;
+  box-shadow: 5px 5px 10px 0px #222;
+  padding: 20px;
+  border-radius: 20px;
+  color: #02657e;
+}
+#quote-box h1 {
+  text-align: center;
+}
+#text {
+  font-weight: bold;
+  animation: fadein 250ms;
+}
+#author {
+  font-weight: bold;
+  font-style: italic;
+  text-align: right;
+  animation: fadein 250ms;
+}
+#new-quote {
+  float: right;
+  background-color: #06cbfc;
+  color: #f7f7f7f7;
+  font-weight: bold;
+}
+
+#tweet-quote {
+  color: #06cbfc;
+  float: left;
+}
+
+#tweet-quote i {
+  font-size: 2em;
+}
+
+@media (max-width: 520px) {
+  #quote-box {
+    min-width: auto;
+    width: 95%;
+    margin: auto;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
